@@ -1,0 +1,11 @@
+cradle:
+  multi:
+    - path: "."
+      config:
+        cradle:
+          stack:
+            - path: "./my-kmeans/kmeans.hs"
+              component: "kmeans:exe:my-kmeans-exe"
+
+            - path: "./my-kmeans/KMeansCore.hs"
+              component: "kmeans:exe:my-kmeans-exe"
