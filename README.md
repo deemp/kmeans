@@ -1,12 +1,40 @@
 # kmeans
 
-* Uses `GHC 9.0.2`
+Uses `GHC 9.0.2`
+
+## stack
 
 * Run to build
     ```sh
     $ stack build
     ```
 
+* Logs
+    ```sh
+    Building all executables for `kmeans' once. After a successful build of all of them, only specified executables will be rebuilt.
+    kmeans> configure (exe)
+    Configuring kmeans-0.1.0.0...
+    kmeans> build (exe)
+    Preprocessing executable 'my-kmeans-exe' for kmeans-0.1.0.0..
+    Building executable 'my-kmeans-exe' for kmeans-0.1.0.0..
+    Linking .stack-work/dist/x86_64-linux-tinfo6/Cabal-3.4.1.0/build/my-kmeans-exe/my-kmeans-exe ...
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x584): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUz2cUZRzugo_closure'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x674): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUz2cUZRzugo_closure'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x8e4): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUZRzugo1_closure'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x9a4): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUZRzugo1_closure'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x64c): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUz2cUZRzugo_info'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/vector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M/libHSvector-0.12.3.1-BmSroY3QVtCAOh838mXZ9M.a(Check.o)(.text+0x979): error: undefined reference to 'base_GHCziShow_zdfShowZLz2cUZRzugo1_info'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/primitive-0.7.3.0-EikPDi9CXNiB9f5MDJybeY/libHSprimitive-0.7.3.0-EikPDi9CXNiB9f5MDJybeY.a(Array.o):function primitivezm0zi7zi3zi0zmEikPDi9CXNiB9f5MDJybeY_DataziPrimitiveziArray_zdwarrayLiftReadPrec_info: error: undefined reference to 'base_GHCziRead_list3_info'
+    /home/user/.stack/snapshots/x86_64-linux-tinfo6/9c48492b149e18ce129fd00f656e45a2602c4cb44a4c4d2fb6ca174960b4277a/9.0.2/lib/x86_64-linux-ghc-9.0.2/primitive-0.7.3.0-EikPDi9CXNiB9f5MDJybeY/libHSprimitive-0.7.3.0-EikPDi9CXNiB9f5MDJybeY.a(Array.o)(.data+0x18c0): error: undefined reference to 'base_GHCziRead_list3_closure'
+    collect2: error: ld returned 1 exit status
+    `gcc' failed in phase `Linker'. (Exit code: 1)
+
+    --  While building package kmeans-0.1.0.0 (scroll up to its section to see the error) using:
+        /home/user/.stack/setup-exe-cache/x86_64-linux-tinfo6/Cabal-simple_mPHDZzAJ_3.4.1.0_ghc-9.0.2 --builddir=.stack-work/dist/x86_64-linux-tinfo6/Cabal-3.4.1.0 build exe:my-kmeans-exe --ghc-options " -fdiagnostics-color=always"
+        Process exited with code: ExitFailure 1
+    ```
+
+## HLS
 * HLS logs
     ```sh
     $ ghcup run haskell-language-server-wrapper
